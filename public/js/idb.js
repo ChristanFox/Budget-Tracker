@@ -11,7 +11,7 @@ request.onsuccess = function(event) {
     db = event.target.result;
 
     if (navigator.onLine) {
-        uploadedTransaction();
+        uploadTransaction();
     }
 };
 
@@ -27,7 +27,7 @@ function saveRecord(record) {
     transObjectStore.add(record);
 }
 
-function uploadedTransaction() {
+function uploadTransaction() {
     
     const transaction = db.transaction([ 'new_transaction' ], 'readwrite');
     const transObjectStore = transaction.objectStore('new_transaction');
